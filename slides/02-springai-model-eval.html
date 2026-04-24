@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--
+  ╔══════════════════════════════════════════════════════════════════╗
+  ║  THORBEN JANSSEN — REVEAL.JS PRESENTATION TEMPLATE              ║
+  ║  Built at 1920×1080 (16:9). Use arrow keys or click to navigate.║
+  ║                                                                  ║
+  ║  SLIDE TYPES INCLUDED:                                           ║
+  ║  1. Cover        – full-bleed photo + teal box + orange accent   ║
+  ║  2. Content      – orange banner + teal sidebar + bullet list    ║
+  ║  3. Bio          – same layout + 3-column grid                   ║
+  ║  4. Chapter      – full-bleed photo + orange banner strip        ║
+  ║  5. Two-Column   – side-by-side comparison cards                 ║
+  ║  6. Code         – dark code block                               ║
+  ║  7. Stats        – big orange numbers                            ║
+  ║  8. Quote        – orange left-border blockquote                 ║
+  ║  9. Closing      – same as Cover                                 ║
+  ║                                                                  ║
+  ║  WRITING CONTENT IN MARKDOWN:                                   ║
+  ║  Add data-markdown to .content-area and put your content        ║
+  ║  inside a <script type="text/template">:                        ║
+  ║                                                                  ║
+  ║  <div class="content-area" data-markdown>                       ║
+  ║    <script type="text/template">                                 ║
+  ║    - Bullet one                                                  ║
+  ║      - Sub-bullet                                                ║
+  ║    - Bullet two                                                  ║
+  ║    <\/script>                                                    ║
+  ║  </div>                                                          ║
+  ║                                                                  ║
+  ║  CUSTOMISATION:                                                  ║
+  ║  • Colors  → edit CSS variables in :root                        ║
+  ║  • Footer  → search for "thorben-janssen.com" and replace          ║
+  ║  • Photos  → replace <div class="cover-photo-bg"> with          ║
+  ║              <img> or a CSS background-image                    ║
+  ╚══════════════════════════════════════════════════════════════════╝
+  -->
+  <title>Presentation Title – Your Name</title>
+
+  <template id="__bundler_thumbnail" data-bg-color="#1E3D52">
+    <svg viewBox="0 0 120 68" xmlns="http://www.w3.org/2000/svg">
+      <rect width="120" height="68" fill="#1E3D52"/>
+      <rect x="0" y="0" width="72" height="18" fill="#E8941A"/>
+      <rect x="0" y="0" width="14" height="68" fill="#1a3448"/>
+      <rect x="18" y="26" width="60" height="4" fill="#E8941A" opacity="0.7"/>
+      <rect x="18" y="34" width="45" height="3" fill="white" opacity="0.3"/>
+      <rect x="18" y="41" width="50" height="3" fill="white" opacity="0.3"/>
+    </svg>
+  </template>
+
+  <!-- Reveal.js -->
+  <link rel="stylesheet" href="_revealjs/reset.css">
+  <link rel="stylesheet" href="_revealjs/reveal.css">
+
+  <!-- Highlight.js — intellij-light theme; highlighting handled by RevealHighlight plugin -->
+  <link rel="stylesheet" href="_theme/stackoverflow-light.min.css">
+  <link rel="stylesheet" href="_theme/thorben-janssen-theme.css">
+</head>
+<body>
+
+<div class="reveal">
+  <div class="slides">
+
+<section data-screen-label="01 Cover">
+      <div class="slide-cover-photo">
+        <div class="cover-photo-bg">
+            <img src="_theme/cover-ai.jpg" alt="cover-photo"/>
+        </div>
+        <div class="cover-orange-border"></div>
+        <div class="cover-teal-box">
+          <h1 class="cover-title">Model Evaluation</h1>
+        </div>
+      </div>
+    
+      <aside class="notes" data-markdown>
+        LLMs are non-deterministic, which makes evaluating the result complicated.
+        A simple assert no longer works because it's very likely that the LLM returns a different response every time.
+        And all or none of them might be correct and relevant.
+
+        You could solve this by having a human evaluate the response.
+          But that's, of course, not very practical.
+
+      </aside>
+    </section>
+
+
+      <section data-screen-label="04 Content">
+          <div class="slide-inner">
+              <div class="sidebar-wrap"><div class="sidebar"></div></div>
+              <div class="title-bar"><h2>Typical Evaluations</h2></div>
+              <div class="content-area" data-markdown>
+                  <script type="text/template">
+                      - Correctness
+                      - Relevancy
+                      - Politeness
+                      - Tone
+                      - Company policies
+                  </script>
+              </div>
+              <div class="slide-footer"><a href="https://thorben-janssen.com" target="_blank">thorben-janssen.com</a></div>
+          </div>
+
+          <aside class="notes">Walk through each bullet point. Expand on the details verbally — keep the slide clean.</aside>
+      </section>
+
+      <section data-screen-label="04 Content">
+          <div class="slide-inner">
+              <div class="sidebar-wrap"><div class="sidebar"></div></div>
+              <div class="title-bar"><h2>LLM as a Judge</h2></div>
+              <div class="content-area" data-markdown>
+                  <script type="text/template">
+                      - Ask an LLM to evaluate a text
+                        - Requires a special evaluation prompt
+                        - Use structured output
+                      - Specialized models for different evaluations
+                        - Judge Arena: https://huggingface.co/spaces/AtlaAI/judge-arena
+                  </script>
+              </div>
+              <div class="slide-footer"><a href="https://thorben-janssen.com" target="_blank">thorben-janssen.com</a></div>
+          </div>
+
+          <aside class="notes">Walk through each bullet point. Expand on the details verbally — keep the slide clean.</aside>
+      </section>
+
+
+<section data-screen-label="03 Chapter">
+      <div class="slide-chapter">
+        <div class="chapter-photo-bg">
+            <img src="_theme/cover-ai.jpg" alt="cover-photo"/>
+        </div>
+        <div class="chapter-banner">Evaluation during Tests</div>
+      </div>
+    
+      <aside class="notes">Introduce this chapter. Give a brief overview of what the audience will learn in this section.</aside>
+    </section>
+
+      <section data-screen-label="04 Content">
+          <div class="slide-inner">
+              <div class="sidebar-wrap"><div class="sidebar"></div></div>
+              <div class="title-bar"><h2>Test Evaluation</h2></div>
+              <div class="content-area" data-markdown>
+                  <script type="text/template">
+                      - Based on `Evaluator` interface
+                      - Standard evaluators
+                        - `FactCheckingEvaluator`
+                        - `RelevancyEvaluator`
+                  </script>
+              </div>
+              <div class="slide-footer"><a href="https://thorben-janssen.com" target="_blank">thorben-janssen.com</a></div>
+          </div>
+
+          <aside class="notes">Walk through each bullet point. Expand on the details verbally — keep the slide clean.</aside>
+      </section>
+
+      <section data-screen-label="06 IDE">
+          <div class="slide-code">
+              <h2>Code Samples</h2>
+          </div>
+          <aside class="notes">Transition to the live code demo. Tell the audience what you'll be showing them.</aside>
+      </section>
+
+      <section data-screen-label="04 Content">
+          <div class="slide-inner">
+              <div class="sidebar-wrap"><div class="sidebar"></div></div>
+              <div class="title-bar"><h2>Using local models</h2></div>
+              <div class="content-area" data-markdown>
+                  <script type="text/template">
+                      - Problem
+                        - Limited resources
+                        - Weak models
+                  </script>
+              </div>
+              <div class="slide-footer"><a href="https://thorben-janssen.com" target="_blank">thorben-janssen.com</a></div>
+          </div>
+
+          <aside class="notes">Walk through each bullet point. Expand on the details verbally — keep the slide clean.</aside>
+      </section>
+
+      <section data-screen-label="04 Content">
+          <div class="slide-inner">
+              <div class="sidebar-wrap"><div class="sidebar"></div></div>
+              <div class="title-bar"><h2>Using local models</h2></div>
+              <div class="content-area" data-markdown>
+                  <script type="text/template">
+                      - Problem
+                        - Limited resources
+                        - Weak models
+                      - Options
+                        - Local inference server
+                        - Testcontainers
+                            - Docker Model Runner
+                            - Ollama in a Docker container
+                  </script>
+              </div>
+              <div class="slide-footer"><a href="https://thorben-janssen.com" target="_blank">thorben-janssen.com</a></div>
+          </div>
+
+          <aside class="notes">Walk through each bullet point. Expand on the details verbally — keep the slide clean.</aside>
+      </section>
+
+      <section data-screen-label="06 IDE">
+          <div class="slide-code">
+              <h2>Code Samples</h2>
+          </div>
+          <aside class="notes">Transition to the live code demo. Tell the audience what you'll be showing them.</aside>
+      </section>
+
+      <section data-screen-label="03 Chapter">
+          <div class="slide-chapter">
+              <div class="chapter-photo-bg">
+                  <img src="_theme/cover-ai.jpg" alt="cover-photo"/>
+              </div>
+              <div class="chapter-banner">Evaluation at Runtime</div>
+          </div>
+
+          <aside class="notes">Introduce this chapter. Give a brief overview of what the audience will learn in this section.</aside>
+      </section>
+
+      <section data-screen-label="04 Content">
+          <div class="slide-inner">
+              <div class="sidebar-wrap"><div class="sidebar"></div></div>
+              <div class="title-bar"><h2>Runtime evaluation</h2></div>
+              <div class="content-area" data-markdown>
+                  <script type="text/template">
+                      - Constraints
+                        - Time
+                        - Money / resources
+                  </script>
+              </div>
+              <div class="slide-footer"><a href="https://thorben-janssen.com" target="_blank">thorben-janssen.com</a></div>
+          </div>
+
+          <aside class="notes">Walk through each bullet point. Expand on the details verbally — keep the slide clean.</aside>
+      </section>
+
+      <section data-screen-label="04 Content">
+          <div class="slide-inner">
+              <div class="sidebar-wrap"><div class="sidebar"></div></div>
+              <div class="title-bar"><h2>Runtime evaluation</h2></div>
+              <div class="content-area" data-markdown>
+                  <script type="text/template">
+                      - Constraints
+                        - Time
+                        - Money / resources
+                      - Based on
+                        - Recursive Evaluators
+                        - Support for multiple ChatModels
+                  </script>
+              </div>
+              <div class="slide-footer"><a href="https://thorben-janssen.com" target="_blank">thorben-janssen.com</a></div>
+          </div>
+
+          <aside class="notes">Walk through each bullet point. Expand on the details verbally — keep the slide clean.</aside>
+      </section>
+
+      <section data-screen-label="06 IDE">
+          <div class="slide-code">
+              <h2>Code Samples</h2>
+          </div>
+          <aside class="notes">Transition to the live code demo. Tell the audience what you'll be showing them.</aside>
+      </section>
+
+      <section data-screen-label="03 Chapter">
+          <div class="slide-chapter">
+              <div class="chapter-photo-bg">
+                  <img src="_theme/cover-ai.jpg" alt="cover-photo"/>
+              </div>
+              <div class="chapter-banner">Questions?</div>
+          </div>
+
+          <aside class="notes">Introduce this chapter. Give a brief overview of what the audience will learn in this section.</aside>
+      </section>
+
+  </div><!-- /.slides -->
+</div><!-- /.reveal -->
+
+<script src="_revealjs/reveal.js"></script>
+<script src="_revealjs/plugin/notes.js"></script>
+<script src="_revealjs/plugin/markdown.js"></script>
+<script src="_revealjs/plugin/highlight.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    transition: 'slide',
+    transitionSpeed: 'default',
+    controls: true,
+    progress: true,
+    slideNumber: 'c/t',
+    width: 1920,
+    height: 1080,
+    margin: 0,
+    minScale: 0.1,
+    maxScale: 2.0,
+    center: false,
+    mouseWheel: true,
+    plugins: [ RevealNotes, RevealMarkdown, RevealHighlight ]
+  });
+
+  // Persist slide position across reloads
+  const STORAGE_KEY = 'reveal-slide-index';
+  Reveal.on('slidechanged', ({ indexh, indexv }) => {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify({ indexh, indexv }));
+  });
+  Reveal.on('ready', () => {
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null');
+    if (saved) Reveal.slide(saved.indexh, saved.indexv);
+  });
+</script>
+</body>
+</html>
