@@ -1,0 +1,35 @@
+package com.thorben.janssen.spring.ai.tools;
+
+import com.thorben.janssen.spring.ai.tools.service.ChatController;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.ai.chat.client.ChatClient;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+
+import java.util.stream.Collectors;
+
+@SpringBootTest
+class ToolTests {
+
+	private static final Logger logger = LoggerFactory.getLogger(ToolTests.class);
+
+	@Autowired
+    private ChatController chatController;
+
+//    @Autowired
+//    private ChatClient.Builder chatClientBuilder;
+
+	@Test
+	void test() {
+        var question = "What time is it?";
+        var response = chatController.chat(question).collect(Collectors.joining()).block();
+        logger.info(response);
+//
+//        Assertions.assertNotNull(response.content());
+//        Assertions.assertFalse(response.content().isEmpty());
+        }
+
+}
