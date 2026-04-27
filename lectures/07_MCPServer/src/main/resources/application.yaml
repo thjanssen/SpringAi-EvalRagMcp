@@ -1,6 +1,6 @@
 spring:
   application:
-    name: 10_MCPServer
+    name: 07_MCPServer
 
   ai:
     mcp:

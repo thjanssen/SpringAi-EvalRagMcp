@@ -25,7 +25,7 @@ class McpClientTests {
 	@Test
 	void test() {
         var question = "What time is it?";
-        var response = chatController.askQuestion(question).collect(Collectors.joining()).block();
+        var response = chatController.chat(question).collect(Collectors.joining()).block();
 		logger.info(response);
 
         Assertions.assertNotNull(response);

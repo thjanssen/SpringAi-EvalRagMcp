@@ -4,7 +4,6 @@ import org.springaicommunity.tool.search.ToolSearchToolCallAdvisor;
 import org.springaicommunity.tool.search.ToolSearcher;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
-import org.springframework.ai.model.ModelOptionsUtils;
 import org.springframework.ai.tool.ToolCallbackProvider;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -36,7 +35,7 @@ public class ChatController {
     }
 
     @PostMapping("/chat")
-    public Flux<String> askQuestion(@RequestBody String message) {
+    public Flux<String> chat(@RequestBody String message) {
         return Flux.just(chatClient.prompt(message).call().content());
     }
 }

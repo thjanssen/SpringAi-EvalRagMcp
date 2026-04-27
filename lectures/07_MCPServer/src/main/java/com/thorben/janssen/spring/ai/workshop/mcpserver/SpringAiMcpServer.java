@@ -14,10 +14,10 @@ public class SpringAiMcpServer {
 		SpringApplication.run(SpringAiMcpServer.class, args);
 	}
 
-    @Bean
-    ToolCallbackProvider toolCallbackProvider(CurrentTimeTool tools) {
-        return MethodToolCallbackProvider.builder()
-                .toolObjects(tools)
-                .build();
-    }
+//    @Bean
+//    ToolCallbackProvider toolCallbackProvider(CurrentTimeTool tools) {
+//        return MethodToolCallbackProvider.builder()
+//                .toolObjects(tools)
+//                .build();
+//    }
 }
