@@ -84,10 +84,11 @@
     <modules>
         <module>01_ErsteAnwendung</module>
         <module>02_Prompting_StructuredOutput</module>
+        <module>03_Advisors</module>
         <module>04_Test</module>
         <module>04_Test_TestcontainersOllama</module>
         <module>04_Test_TestcontainersDockerModelRunner</module>
-        <module>03_Advisors</module>
+        <module>04_X_RuntimeEvaluation</module>
         <module>05_RAG</module>
         <module>06_ToolCalling</module>
         <module>07_MCPServer</module>

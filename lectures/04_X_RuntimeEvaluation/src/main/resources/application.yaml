@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: 04_Test
+
+  ai:
+    ollama:
+      chat:
+        model: qwen3:8b
+    openai:
+      api-key: ${MyVerySecretChatGptKey}
+
+logging:
+  level:
+    org:
+      springframework:
+        ai:
+          chat:
+            client:
+              advisor: DEBUG
