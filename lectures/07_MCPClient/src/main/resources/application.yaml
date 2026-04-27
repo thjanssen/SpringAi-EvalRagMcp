@@ -13,7 +13,11 @@ spring:
           model: gpt-5
     mcp:
       client:
-        sse:
+#        sse:
+#          connections:
+#            server1:
+#              url: http://localhost:7070
+        streamable-http:
           connections:
             server1:
               url: http://localhost:7070
