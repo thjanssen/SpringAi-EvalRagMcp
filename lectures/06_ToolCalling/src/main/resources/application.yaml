@@ -1,0 +1,34 @@
+spring:
+  application:
+    name: 09_ToolCalling
+
+  ai:
+    ollama:
+      chat:
+        model: qwen3
+    openai:
+      api-key: ${MyVerySecretChatGptKey}
+      chat:
+        options:
+          model: gpt-5
+
+  mvc:
+    log-request-details: true
+
+logging:
+    level:
+      org:
+        springframework:
+          ai: DEBUG
+          web: DEBUG
+
+
+#server:
+#  error:
+#    include-message: always
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics

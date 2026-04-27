@@ -9,7 +9,7 @@
         <relativePath>..</relativePath>
     </parent>
 	<artifactId>04_Test_TestcontainersDockerModelRunner</artifactId>
-	<name>04_Test</name>
+	<name>Test_TestcontainersDockerModelRunner</name>
     <description>Demo project for Spring AI</description>
 
     <dependencies>

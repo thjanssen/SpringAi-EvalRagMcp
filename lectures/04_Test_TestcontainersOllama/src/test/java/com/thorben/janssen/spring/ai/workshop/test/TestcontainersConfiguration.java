@@ -42,18 +42,18 @@ public class TestcontainersConfiguration {
         Slf4jLogConsumer logConsumer = new Slf4jLogConsumer(LoggerFactory.getLogger(TestcontainersConfiguration.class));
 
         // Startet ein Image mit Ollama ohne installiertes Modell
-        var ollamaContainer = new OllamaContainer("ollama/ollama");
-        ollamaContainer.withLogConsumer(logConsumer);
-        ollamaContainer.start();
-        // Installiert das qwen3 innerhalb des Containers
-        ollamaContainer.execInContainer("ollama", "pull", "qwen3:8b");
-        // Optional: Erstellt ein wiederverwendbares Image dieses Containers
-        ollamaContainer.commitToImage("ollama/qwen3-8b");
-
-        // Startet ein vorher erstelltes Image mit Ollama und qwen3
-//        var ollamaContainer = new OllamaContainer(DockerImageName.parse("qwen3-8b").asCompatibleSubstituteFor("ollama/ollama"));
+//        var ollamaContainer = new OllamaContainer("ollama/ollama");
 //        ollamaContainer.withLogConsumer(logConsumer);
 //        ollamaContainer.start();
+//        // Installiert das qwen3 innerhalb des Containers
+//        ollamaContainer.execInContainer("ollama", "pull", "qwen3:8b");
+//        // Optional: Erstellt ein wiederverwendbares Image dieses Containers
+//        ollamaContainer.commitToImage("ollama/qwen3-8b");
+
+        // Startet ein vorher erstelltes Image mit Ollama und qwen3
+        var ollamaContainer = new OllamaContainer(DockerImageName.parse("qwen3-8b").asCompatibleSubstituteFor("ollama/ollama"));
+        ollamaContainer.withLogConsumer(logConsumer);
+        ollamaContainer.start();
 
         return ollamaContainer;
     }

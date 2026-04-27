@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: 05_RAG
+
+  ai:
+    ollama:
+      chat:
+        model: qwen3
+    openai:
+      api-key: ${MyVerySecretChatGptKey}
+
+#  mvc:
+#    log-request-details: true
+
+logging:
+    level:
+      org:
+        springframework: DEBUG
+#          ai:
+#            chat:
+#              client:
+#                advisor: DEBUG
+#          web: DEBUG
+
+
+#server:
+#  error:
+#    include-message: always

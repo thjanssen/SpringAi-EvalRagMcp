@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
-        <version>4.0.1</version>
+        <version>4.0.6</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
 	<groupId>com.thorben.janssen.spring.ai.lectures</groupId>
@@ -31,7 +31,7 @@
     <properties>
         <java.version>21</java.version>
         <vaadin.version>25.0.0</vaadin.version>
-        <spring-ai.version>2.0.0-M1</spring-ai.version>
+        <spring-ai.version>2.0.0-M4</spring-ai.version>
     </properties>
 
 	<dependencyManagement>
@@ -82,15 +82,15 @@
     </build>
 
     <modules>
-        <module>02_ErsteAnwendung</module>
-        <module>03_Prompting_StructuredOutput</module>
+        <module>01_ErsteAnwendung</module>
+        <module>02_Prompting_StructuredOutput</module>
         <module>04_Test</module>
         <module>04_Test_TestcontainersOllama</module>
         <module>04_Test_TestcontainersDockerModelRunner</module>
-        <module>05_Advisors</module>
-        <module>06_RAG</module>
-        <module>07_ToolCalling</module>
-        <module>08_MCPServer</module>
-        <module>08_MCPClient</module>
+        <module>03_Advisors</module>
+        <module>05_RAG</module>
+        <module>06_ToolCalling</module>
+        <module>07_MCPServer</module>
+        <module>07_MCPClient</module>
     </modules>
 </project>

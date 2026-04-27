@@ -33,7 +33,7 @@ class SpringAiTests {
 
 	@Test
 	void testRelevancy() {
-        var question = "How many kg are in a metric ton?";
+        var question = "Tell me something about the solar system";
         var response = chatController.chat(question).collect(Collectors.joining()).block();
         logger.info("LLM Response: "+response);
 
