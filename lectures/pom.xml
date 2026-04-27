@@ -85,6 +85,7 @@
         <module>01_ErsteAnwendung</module>
         <module>02_Prompting_StructuredOutput</module>
         <module>03_Advisors</module>
+        <module>03_ChatMemory_InMemory</module>
         <module>04_Test</module>
         <module>04_Test_TestcontainersOllama</module>
         <module>04_Test_TestcontainersDockerModelRunner</module>
