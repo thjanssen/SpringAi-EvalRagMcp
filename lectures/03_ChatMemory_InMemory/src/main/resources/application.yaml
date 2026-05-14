@@ -1,6 +1,6 @@
 spring:
   application:
-    name: Exp_ChatMemory
+    name: ChatMemory
 
   ai:
     ollama:

@@ -10,7 +10,7 @@
     </parent>
     <groupId>com.thorben.janssen.spring.ai.buch</groupId>
     <artifactId>03_ChatMemory_InMemory</artifactId>
-    <name>03_ChatMemory_InMemory</name>
+    <name>ChatMemory_InMemory</name>
     <description>Demo project for Spring AI</description>
 
     <dependencies>

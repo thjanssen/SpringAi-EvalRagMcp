@@ -51,7 +51,7 @@ public class TestcontainersConfiguration {
 //        ollamaContainer.commitToImage("ollama/qwen3-8b");
 
         // Startet ein vorher erstelltes Image mit Ollama und qwen3
-        var ollamaContainer = new OllamaContainer(DockerImageName.parse("qwen3-8b").asCompatibleSubstituteFor("ollama/ollama"));
+        var ollamaContainer = new OllamaContainer(DockerImageName.parse("ollama/qwen3-8b").asCompatibleSubstituteFor("ollama/ollama"));
         ollamaContainer.withLogConsumer(logConsumer);
         ollamaContainer.start();
 
