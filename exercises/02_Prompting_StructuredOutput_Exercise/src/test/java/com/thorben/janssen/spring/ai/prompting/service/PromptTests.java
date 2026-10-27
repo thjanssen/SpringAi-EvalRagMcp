@@ -19,7 +19,7 @@ class PromptTests {
 
 	@Test
 	void test() {
-        var question = "Wer ist seit 2000 Fussball Weltmeister geworden?";
+        var question = "Who has won the soccer world championship since 2000?";
         var response = chatController.chat(question).collect(Collectors.joining()).block();
         logger.info(response);
 

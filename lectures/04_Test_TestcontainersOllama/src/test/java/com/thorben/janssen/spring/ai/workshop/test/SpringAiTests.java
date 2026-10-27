@@ -51,7 +51,7 @@ class SpringAiTests {
         var ollamaApi = OllamaApi.builder().baseUrl(qwen3Container.getEndpoint()).build();
         var chatModel = OllamaChatModel.builder()
                 .ollamaApi(ollamaApi)
-                .defaultOptions(OllamaChatOptions.builder()
+                .options(OllamaChatOptions.builder()
                         .model("qwen3:8b")
                         .temperature(0.0d)
                         .topP(1d)
@@ -77,7 +77,7 @@ class SpringAiTests {
         var ollamaApi = OllamaApi.builder().baseUrl(minicheckContainer.getEndpoint()).build();
         var chatModel = OllamaChatModel.builder()
                 .ollamaApi(ollamaApi)
-                .defaultOptions(OllamaChatOptions.builder()
+                .options(OllamaChatOptions.builder()
                                 .model("bespoke-minicheck")
                                 .temperature(0.0d)
                                 .topP(1d)

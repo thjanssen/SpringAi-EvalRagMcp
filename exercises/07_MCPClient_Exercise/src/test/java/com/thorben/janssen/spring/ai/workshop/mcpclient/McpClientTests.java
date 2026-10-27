@@ -24,7 +24,7 @@ class McpClientTests {
 
 	@Test
 	void test() {
-        var question = "Ist das Wetter in Palma besser als in Paderborn?";
+        var question = "Is the weather in Palma better than in Paderborn?";
         var response = chatController.askQuestion(question).collect(Collectors.joining()).block();
 		logger.info(response);
 

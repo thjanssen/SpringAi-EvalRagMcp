@@ -9,7 +9,6 @@
         <relativePath>..</relativePath>
     </parent>
 	<artifactId>02_Prompting_StructuredOutput</artifactId>
-	<name>Prompting_StructuredOutput</name>
     <description>Demo project for Spring AI</description>
 
     <dependencies>

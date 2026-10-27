@@ -45,14 +45,14 @@ public class VectorStoreConfig {
             TextReader textReader = new TextReader(inputFile);
             textReader.getCustomMetadata().put("filename", "chatclient.adoc");
             List<Document> documents = textReader.get();
-            TextSplitter textSplitter = new TokenTextSplitter();
+            TextSplitter textSplitter = TokenTextSplitter.builder().build();
             List<Document> splitDocuments = textSplitter.apply(documents);
             simpleVectorStore.add(splitDocuments);
 
             textReader = new TextReader(inputFile2);
             textReader.getCustomMetadata().put("filename", "retrieval-augmented-generation.adoc");
             documents = textReader.get();
-            textSplitter = new TokenTextSplitter();
+            textSplitter = TokenTextSplitter.builder().build();
             splitDocuments = textSplitter.apply(documents);
             simpleVectorStore.add(splitDocuments);
 

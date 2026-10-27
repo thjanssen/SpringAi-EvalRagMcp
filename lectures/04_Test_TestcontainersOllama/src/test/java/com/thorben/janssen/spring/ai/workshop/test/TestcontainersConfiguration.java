@@ -19,17 +19,17 @@ public class TestcontainersConfiguration {
     OllamaContainer minicheckContainer() throws IOException, InterruptedException {
         Slf4jLogConsumer logConsumer = new Slf4jLogConsumer(LoggerFactory.getLogger(TestcontainersConfiguration.class));
 
-        // Startet ein Image mit Ollama ohne installiertes Modell
+        // Starts an Ollama image without any installed model
 //        var ollamaContainer = new OllamaContainer("ollama/ollama");
 //        ollamaContainer.withLogConsumer(logConsumer);
 //        ollamaContainer.start();
-//        // Installiert das bespoke-minicheck innerhalb des Containers
+//        // Installs bespoke-minicheck inside the container
 //        ollamaContainer.execInContainer("ollama", "pull", "bespoke-minicheck");
-//        // Optional: Erstellt ein wiederverwendbares Image dieses Containers
+//        // Optional: creates a reusable image of this container
 //        ollamaContainer.commitToImage("ollama/bespoke-minicheck");
 
 
-        // Startet ein vorher erstelltes Image mit Ollama und bespoke-mini
+        // Starts a previously created image with Ollama and bespoke-minicheck
         var ollamaContainer = new OllamaContainer(DockerImageName.parse("ollama/bespoke-minicheck").asCompatibleSubstituteFor("ollama/ollama"));
         ollamaContainer.withLogConsumer(logConsumer);
         ollamaContainer.start();
@@ -41,16 +41,16 @@ public class TestcontainersConfiguration {
     OllamaContainer qwen3Container() throws IOException, InterruptedException {
         Slf4jLogConsumer logConsumer = new Slf4jLogConsumer(LoggerFactory.getLogger(TestcontainersConfiguration.class));
 
-        // Startet ein Image mit Ollama ohne installiertes Modell
+        // Starts an Ollama image without any installed model
 //        var ollamaContainer = new OllamaContainer("ollama/ollama");
 //        ollamaContainer.withLogConsumer(logConsumer);
 //        ollamaContainer.start();
-//        // Installiert das qwen3 innerhalb des Containers
+//        // Installs qwen3 inside the container
 //        ollamaContainer.execInContainer("ollama", "pull", "qwen3:8b");
-//        // Optional: Erstellt ein wiederverwendbares Image dieses Containers
+//        // Optional: creates a reusable image of this container
 //        ollamaContainer.commitToImage("ollama/qwen3-8b");
 
-        // Startet ein vorher erstelltes Image mit Ollama und qwen3
+        // Starts a previously created image with Ollama and qwen3
         var ollamaContainer = new OllamaContainer(DockerImageName.parse("ollama/qwen3-8b").asCompatibleSubstituteFor("ollama/ollama"));
         ollamaContainer.withLogConsumer(logConsumer);
         ollamaContainer.start();

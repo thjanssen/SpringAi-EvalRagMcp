@@ -2,9 +2,9 @@ package com.thorben.janssen.spring.ai.tools;
 
 import com.vaadin.flow.component.page.AppShellConfigurator;
 import com.vaadin.flow.component.page.Push;
-import org.springaicommunity.tool.search.ToolSearcher;
-import org.springaicommunity.tool.searcher.RegexToolSearcher;
 import org.springframework.ai.tool.ToolCallbackProvider;
+import org.springframework.ai.tool.toolsearch.ToolIndex;
+import org.springframework.ai.tool.toolsearch.index.regex.RegexToolIndex;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -18,7 +18,7 @@ public class SpringAiTool implements AppShellConfigurator {
 	}
 
 	@Bean
-	ToolSearcher toolSearcher() {
-		return new RegexToolSearcher();  // similarity threshold
+	ToolIndex toolIndex() {
+		return new RegexToolIndex();  // similarity threshold
 	}
 }

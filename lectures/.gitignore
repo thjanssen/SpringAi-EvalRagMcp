@@ -26,3 +26,7 @@ replay_pid*
 */target/**
 .vscode/**
 **/generated/**
+
+# H2 database files
+*.mv.db
+*.trace.db

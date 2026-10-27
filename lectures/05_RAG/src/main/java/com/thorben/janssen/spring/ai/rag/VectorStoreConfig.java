@@ -43,7 +43,7 @@ public class VectorStoreConfig {
             textReader.getCustomMetadata().put("filename", "chatclient.adoc");
             textReader.getCustomMetadata().put("topic", "Spring AI");
             List<Document> documents = textReader.get();
-            TextSplitter textSplitter = new TokenTextSplitter();
+            TextSplitter textSplitter = TokenTextSplitter.builder().build();
             List<Document> splitDocuments = textSplitter.apply(documents);
             simpleVectorStore.add(splitDocuments);
             simpleVectorStore.save(vectorStoreFile);

@@ -24,8 +24,7 @@ class RAGTests {
 
 	@Test
 	void test() {
-//        var question = "Can Spring AI stream the result?";
-        var question = "Kann Spring AI die Antwort streamen?";
+        var question = "Can Spring AI stream the result?";
         var response = chatController.chat(question).collect(Collectors.joining()).block();
         logger.info(response);
 

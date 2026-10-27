@@ -9,7 +9,6 @@
         <relativePath>..</relativePath>
     </parent>
 	<artifactId>03_Advisors</artifactId>
-	<name>Advisors</name>
     <description>Demo project for Spring AI</description>
 
     <dependencies>

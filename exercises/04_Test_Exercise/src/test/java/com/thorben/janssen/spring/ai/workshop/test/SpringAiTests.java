@@ -34,7 +34,7 @@ class SpringAiTests {
 
 	@Test
 	void testRelevancy() {
-        var question = "Wer ist seit 2000 Fussball Weltmeister geworden?";
+        var question = "Which countries have won the men's FIFA World Cup since 2000?";
         var response = chatController.chat(question).collect(Collectors.joining()).block();
         logger.info("LLM Response: "+response);
 

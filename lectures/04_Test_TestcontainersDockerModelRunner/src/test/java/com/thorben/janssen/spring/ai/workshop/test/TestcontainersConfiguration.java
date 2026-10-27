@@ -21,7 +21,7 @@ public class TestcontainersConfiguration {
         return (registrar) -> {
             registrar.add("spring.ai.openai.base-url", modelRunnerContainer::getOpenAIEndpoint);
             registrar.add("spring.ai.openai.api-key", () -> "ignored");
-            registrar.add("spring.ai.openai.chat.options.model", () -> "ai/gemma3");
+            registrar.add("spring.ai.openai.chat.model", () -> "ai/gemma3");
         };
     }
 }

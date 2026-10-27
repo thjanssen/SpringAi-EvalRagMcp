@@ -2,14 +2,14 @@ package com.thorben.janssen.spring.ai.tools.service;
 
 import com.thorben.janssen.spring.ai.tools.tool.CurrentTimeTool;
 import com.thorben.janssen.spring.ai.tools.tool.DummyTools;
-import org.springaicommunity.tool.search.ToolSearchToolCallAdvisor;
-import org.springaicommunity.tool.search.ToolSearcher;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
-import org.springframework.ai.chat.client.advisor.ToolCallAdvisor;
+import org.springframework.ai.chat.client.advisor.api.MemoryAdvisor;
+import org.springframework.ai.chat.client.advisor.toolsearch.ToolSearchToolCallingAdvisor;
 import org.springframework.ai.model.ModelOptionsUtils;
 import org.springframework.ai.model.tool.ToolCallingManager;
 import org.springframework.ai.tool.resolution.ToolCallbackResolver;
+import org.springframework.ai.tool.toolsearch.ToolIndex;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 
@@ -27,12 +27,11 @@ public class ChatController {
 
     private final ChatClient chatClient;
 
-    public ChatController(ChatClient.Builder chatClientBuilder, ToolCallingManager toolCallingManager, ToolSearcher toolSearcher) {
+    public ChatController(ChatClient.Builder chatClientBuilder, ToolCallingManager toolCallingManager, ToolIndex toolIndex) {
         this.chatClient = chatClientBuilder
                 .defaultTools(new CurrentTimeTool())
                 .defaultAdvisors(
-                    ToolCallAdvisor.builder().toolCallingManager(toolCallingManager).build(),
-                    ToolSearchToolCallAdvisor.builder().toolSearcher(toolSearcher).build(),
+                    ToolSearchToolCallingAdvisor.builder().toolCallingManager(toolCallingManager).toolIndex(toolIndex).build(),
                     new MyLoggingAdvisor(),
                     SimpleLoggerAdvisor.builder().build()
                 )
@@ -41,6 +40,10 @@ public class ChatController {
     }
 
     public Flux<String> chat(String message) {
-        return Flux.just(chatClient.prompt(message).call().content());
+        return Flux.just(chatClient.prompt(message)
+                // ToolSearchToolCallingAdvisor scopes its tool index per session
+                .advisors(a -> a.param(MemoryAdvisor.CONVERSATION_ID, "default"))
+                .call()
+                .content());
     }
 }

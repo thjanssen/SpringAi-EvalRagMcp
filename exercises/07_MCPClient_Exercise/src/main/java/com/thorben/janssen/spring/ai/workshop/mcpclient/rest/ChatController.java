@@ -1,11 +1,11 @@
 package com.thorben.janssen.spring.ai.workshop.mcpclient.rest;
 
-import org.springaicommunity.tool.search.ToolSearchToolCallAdvisor;
-import org.springaicommunity.tool.search.ToolSearcher;
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor;
+import org.springframework.ai.chat.client.advisor.toolsearch.ToolSearchToolCallingAdvisor;
 import org.springframework.ai.model.ModelOptionsUtils;
 import org.springframework.ai.tool.ToolCallbackProvider;
+import org.springframework.ai.tool.toolsearch.ToolIndex;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
